@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+
+namespace testando
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            //string[] carros={"Nissan","Honda","Lexus","Prisma"};
+            //foreach(string e in carros){
+                //Console.WriteLine(e);
+           // }
+            //Console.WriteLine(carros[0]);
+            //List<string>lista = new List<string>();
+            //lista.Add("Xiaomi");
+            //lista.Add("Samsung");
+            //lista.Add("LG");
+            
+           // lista.Insert(1,"Iphone");
+            //lista.Sort();
+            //lista.Remove("Xiaomi");
+            
+
+            //Console.WriteLine("Total de registros da lista: " + lista.Count);
+           
+            //foreach(string l in lista){
+                //Console.WriteLine(l);
+
+            List<String> lista_nome = new List<string>();
+            List<double> lista_imc = new List<double>();
+
+            char continua = 'S';
+            double altura, peso;
+
+            do{
+
+                Console.WriteLine("Informe o nome do paciente: ");
+                lista_nome.Add(Console.ReadLine());
+
+                Console.WriteLine("Informe a altura do paciente: ");
+                altura =double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Informe o peso do paciente: ");
+                peso =double.Parse(Console.ReadLine());
+
+                lista_imc.Add(peso /(altura*altura));
+
+                Console.WriteLine("Deseja continuar?(S) sim (N) Não");
+                continua = Char.Parse(Console.ReadLine());
+
+            } while(continua =='s');
+
+            foreach(String nomes in lista_nome ){
+                Console.WriteLine(nomes);
+            }
+
+            foreach(double retorno in lista_imc){
+                Console.WriteLine(retorno);
+            }
+            for (int i= 0;i<lista_nome.Count;i++){
+                Console.WriteLine("Paciente " + lista_nome[i] + " seu imc é " + lista_imc[i]);
+            }
+
+        }
+    }
+}
